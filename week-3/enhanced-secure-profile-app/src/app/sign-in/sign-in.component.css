@@ -1,0 +1,9 @@
+.sign-in-container{
+    width: 35%;
+
+    margin: 0 auto;
+    margin-top: 10%;
+}
+.sign-in-container form{
+    padding: 25px;
+}
