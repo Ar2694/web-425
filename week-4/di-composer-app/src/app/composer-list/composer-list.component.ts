@@ -18,7 +18,7 @@ import { ComposerService } from '../composer.service';
   styleUrls: ['./composer-list.component.css']
 })
 
-//Output the list of composers from the composer class.
+//Output the list of composers from the composer service.
 export class ComposerListComponent implements OnInit {
 
   composers: Array<IComposer>;
