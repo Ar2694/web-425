@@ -2,9 +2,9 @@
 ============================================
 ; Title: composer-details.component.ts
 ; Author: Professor Krasso
-; Date: 16 January 2021
+; Date: 23 January 2021
 ; Modified By: Arlix Sorto
-; Description: Exercise 3.2 - Passing Data to Routes, Part 1
+; Description: Exercise 4.2 - Inversion of Control and Dependency Injection
 ;===========================================
 */ 
 
