@@ -16,5 +16,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'composer-app';
-  assignment: String = "Exercise 3.2 - Passing Data to Routes, Part 1";
+
 }
