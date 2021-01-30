@@ -1,3 +1,12 @@
+/*
+============================================
+; Title: contact.component.ts
+; Author: Professor Krasso
+; Date: 29 January 2021
+; Modified By: Arlix Sorto
+; Description: Exercise 5.2 - Navigation and Layout
+;===========================================
+*/ 
 import { Component, OnInit } from '@angular/core';
 
 @Component({
