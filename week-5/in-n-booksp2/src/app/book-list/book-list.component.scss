@@ -1,0 +1,10 @@
+.blue{
+ color: rgb(93, 93, 255);
+    text-decoration: none;
+    cursor: pointer;
+    &:hover{
+        color: #FFFFFF;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
