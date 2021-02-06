@@ -1,0 +1,34 @@
+<!--
+/*
+============================================
+; Title: wishlist-create.component.html
+; Author: Professor Krasso
+; Date: 06 Feburary 2021
+; Modified By: Arlix Sorto
+; Description: Exercise 6.2 - Output Properties
+;===========================================
+*/
+-->
+
+<div fxLayout="column">
+
+<!--The event binding connects addItemEmitter to the method in the parent.-->
+<app-wishlist-create fxFlex (addItemEmitter)="updateItemsHandler($event)"></app-wishlist-create>
+
+<br />
+<br />
+
+<!--Display the list of items-->
+<mat-list fxFlex *ngIf="items && items.length > 0">
+    <mat-list-item *ngFor="let item of items">
+        <div mat-line>Title: {{item.title}}</div>
+        <div mat-line>Author: {{item.authors}}</div>
+    </mat-list-item>
+
+</mat-list>
+
+<!--Display a message if the item list is empty-->
+<div fxFlex *ngIf="!items || items.length === 0">
+    <h2 style="text-align: center;">Your wishlist is empty.</h2>
+</div>
+</div>

@@ -1,0 +1,27 @@
+<!--
+/*
+============================================
+; Title: book-details-dialog.component.html
+; Author: Professor Krasso
+; Date: 30 January 2021
+; Modified By: Arlix Sorto
+; Description: Assignment 5.4 - Dialogs
+;===========================================
+*/
+-->
+
+<mat-card>
+    <mat-card-title style=" color: rgb(93, 93, 255);">{{book.title}}</mat-card-title>
+    <mat-card-content>
+        <div fxLayout="column">
+            <br />
+            <p>ISBN: <br /> {{book.isbn}}</p>
+            <p>Description: <br /> {{book.description}}</p>
+            <p>Number of Pages: <br />{{book.numOfPages}}</p>
+            <p>Authors: <br />{{book.authors.join(', ')}}</p>
+        </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-raised-button color='accent' matDialogClose='confirm'>OK</button>
+    </mat-card-actions>
+</mat-card>
