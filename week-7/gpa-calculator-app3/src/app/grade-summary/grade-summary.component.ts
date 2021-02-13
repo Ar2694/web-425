@@ -7,7 +7,6 @@
 ; Description: Assignment 6.4 - Input Properties
 ;===========================================
 */ 
-
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
