@@ -1,0 +1,51 @@
+<!--/*
+============================================
+; Title: sign-in.component.html
+; Author: Professor Krasso
+; Date: 13 Feburary 2021
+; Modified By: Arlix Sorto
+; Description: Exercise 7.3 - Form Validation
+;===========================================
+*/ -->
+<div fxLayout="column">
+    <div fxFlex>
+        <mat-card class="sign-in-container">
+            <mat-card-title class="title">Student Sign In</mat-card-title>
+            <mat-card-subtitle class="subtitle">You must enter a valid student ID to proceed.</mat-card-subtitle>
+            <mat-card-content class="form-container">
+
+                <!---Display error message if student id is not valid-->
+                <div class="msg-error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+                <div *ngIf="form.studentId.errors && form.studentId.touched">
+                    <div class="msg-error">Student ID must be a numeric value.</div>
+                </div>
+
+                <!--Sign in form-->
+                <form [formGroup]="signinForm" (ngSubmit)="onSubmit(); signinForm.reset()">
+
+                    <mat-card-content fxLayout="column">
+
+                        <!--Student ID form field-->
+                        <mat-form-field fxFlex appearance="fill">
+                            <mat-label for="txtStudentId">Student ID</mat-label>
+                            <input type="text" name="txtStudentId" matInput formControlName="studentId"
+                                id="txtStudentId" required>
+                        </mat-form-field>
+
+                        <!--Submit button container-->
+                        <mat-card-actions>
+                            <button type="submit" [disabled]="!signinForm.valid" fxFlex mat-raised-button
+                                color="primary">Submit</button>
+                        </mat-card-actions>
+
+                    </mat-card-content>
+
+
+                </form>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+</div>

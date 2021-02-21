@@ -1,0 +1,28 @@
+<!---
+/*
+============================================
+; Title: not-found.component.html
+; Author: Professor Krasso
+; Date: 06 Feburary 2021
+; Modified By: Arlix Sorto
+; Description: Exercise 6.3 - Layouts
+;===========================================
+*/ 
+-->
+<div fxLayout="column" >
+    <mat-card fxFlex style="margin: 100px auto;">
+      <mat-card-title style="text-align: center;">
+        <span class="material-icons">
+            error
+            </span>
+
+      </mat-card-title>
+      <br/>
+      <mat-card-content style="text-align: center;">
+          <h1>404</h1>
+          <h2>OOPS! PAGE NOT BE FOUND</h2>
+          <p>Sorry but the page you requested was not found.</p>
+        <button mat-raised-button color="accent" routerLink="/" >Return home</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
