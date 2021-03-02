@@ -1,0 +1,35 @@
+<!--
+/*
+============================================
+; Title: invoice-summary-dialog.component.html
+; Author: Professor Krasso
+; Date: 27 Feburary 2021
+; Modified By: Arlix Sorto
+; Description: Assignment 9.3 - Bob's Computer Repair Shop
+;===========================================
+*/
+
+-->
+<mat-card class="card-container">
+    <!--------Header section -->
+    <mat-card-header fxLayout="row" fxLayoutAlign="center" class="card-header">
+        <mat-card-title class="card-title">Invoice Summary</mat-card-title>
+    </mat-card-header>
+      
+    <mat-card-content>
+      <!--------Invoice summary section -->
+        <mat-list>
+           <mat-list-item  *ngFor="let service of invoiceSummary.services" class="list-items"> {{service.service}}: ${{service.price}} </mat-list-item>
+           <mat-list-item class="list-items">Labor Cost($50 per hour): ${{invoiceSummary.laborCost | number : '1.2-2'}} </mat-list-item>
+            <mat-list-item class="list-items">Part Cost: ${{invoiceSummary.partCost | number : '1.2-2'}}</mat-list-item>
+            <hr />
+            <mat-list-item class="list-items total-cost">Total Costs: ${{invoiceSummary.totalCost | number : '1.2-2'}}</mat-list-item>
+         </mat-list>
+        
+    </mat-card-content>
+    <!--------Close button section -->
+    <mat-card-actions align="end">
+        <button mat-raised-button color='accent' matDialogClose='confirm'>Close</button>
+    </mat-card-actions>
+  </mat-card>
+  

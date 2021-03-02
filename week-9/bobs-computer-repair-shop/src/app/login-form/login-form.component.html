@@ -1,0 +1,60 @@
+<!--
+    /*
+============================================
+; Title: login-form.component.ts
+; Author: Professor Krasso
+; Date: 27 Feburary 2021
+; Modified By: Arlix Sorto
+; Description: Assignment 9.3 - Bob's Computer Repair Shop
+;===========================================
+*/
+-->
+<div fxLayout="column">
+    <div fxFlex>
+        <mat-card class="login-container">
+            <mat-card-header fxLayout="row" fxLayoutAlign="center" class="card-header" class="title-container">
+                <mat-card-title class="title">Log In</mat-card-title>
+                <mat-card-subtitle class="subtitle">Please enter yout credentials.</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content class="form-container">
+
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit(); loginForm.reset()">
+
+                    <mat-card-content fxLayout="column">
+
+                        <!--Username form field-->
+                        <mat-form-field fxFlex >
+                            <mat-label for="txtusername">Username</mat-label>
+                            <input type="text" name="txtusername" matInput formControlName="username" id="txtusername" required>
+                        </mat-form-field>
+                        
+                        <!--Password form field-->
+                        <mat-form-field fxFlex>
+                            <mat-label for="txtPassword">Password</mat-label>
+                            <input type="text" name="txtPassword" matInput formControlName="password" id="txtPassword" required>
+                        </mat-form-field>
+
+                        <!--Login button container-->
+                        <mat-card-actions>
+                            <button type="submit" [disabled]="!loginForm.valid" fxFlex mat-raised-button color="accent">Login</button>
+                        </mat-card-actions>
+                        <mat-card-footer fxLayout="column" fxLayoutAlign="center" class="card-header" class="footer-container">
+                            <mat-card-title class="title">For demonstration purposes. Please enter the following credentials:</mat-card-title>
+                            <mat-card-subtitle class="subtitle">Username: admin</mat-card-subtitle>
+                            <mat-card-subtitle class="subtitle">Password: admin</mat-card-subtitle>
+                        </mat-card-footer>
+                    </mat-card-content>
+                    <!---Display error message if credential is not valid-->
+                    <div class="msg-error" *ngIf="errorMsg">{{ errorMsg }}</div>
+
+
+
+                </form>
+               
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+</div>
+

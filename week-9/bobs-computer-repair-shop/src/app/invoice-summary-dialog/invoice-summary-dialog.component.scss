@@ -1,0 +1,20 @@
+.card-header{
+    background-color:#1976d2;
+    color: #FFFFFF;
+}
+.card-header *{
+    text-align: center;
+     margin: 5px auto!important;
+}
+.card-header .card-title{ 
+    margin: 10px auto!important;
+
+}
+
+.list-items:not(.total-cost){
+height: 35px;
+}
+
+.total-cost{
+    font-weight: 700;
+}

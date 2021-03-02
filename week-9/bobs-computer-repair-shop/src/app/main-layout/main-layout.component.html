@@ -1,0 +1,36 @@
+<!--------Top Navigation section -->
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <div class="main-tile">
+            <p>Bob’s Computer Repair Shop</p>
+        </div>
+        <div style="width: 80%;">
+            <div fxLayout="row wrap" fxLayoutAlign="end start">
+                <button mat-button routerLink='/'>Home</button>
+                <button mat-button (click)="logOut();">Log Out</button>
+            </div>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<!--------Main container section -->
+<div fxLayout="row">
+    <div fxFlex>
+        <div class="main-container">
+            <mat-card-content>
+                <router-outlet></router-outlet>
+            </mat-card-content>
+        </div>
+    </div>
+
+</div>
+<!--------Page footer section -->
+<mat-toolbar color="accent">
+    <mat-toolbar-row>
+        <div>
+            <div fxLayout="row wrap" fxLayoutAlign="end start">
+                <p>Arlix Sorto</p>
+
+            </div>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

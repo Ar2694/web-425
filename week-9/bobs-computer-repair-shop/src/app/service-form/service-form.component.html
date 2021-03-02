@@ -1,0 +1,81 @@
+<!---
+/*
+============================================
+; Title: service-form.component.html
+; Author: Professor Krasso
+; Date: 27 Feburary 2021
+; Modified By: Arlix Sorto
+; Description: Assignment 9.3 - Bob's Computer Repair Shop
+;===========================================
+*/
+-->
+<div fxFlex>
+    <div fxFlex class="service-form">
+        <mat-card>
+            <mat-card-title class="form-title">{{title}}</mat-card-title>
+
+            <mat-card-content>
+                <form fxLayout="row" [formGroup]="serviceForm" (ngSubmit)="onSubmit(); showInvoiceSummary();">
+                    <!--------Select services section -->
+                    <div fxFlex fxLayout="column" class="form-group">
+                        <label id="radio-group-label" class="form-sub-title">Selected Services</label>
+                        <div *ngFor="let service of selectableService" class="service-container">
+                            <mat-checkbox #element type="checkbox" formControlName="services"
+                                (change)="fetchSelectedItems(element, service.service_id)">
+                                {{service.service}}: ${{service.price}}
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                    <!--------Standard fee section -->
+                    <div fxFlex fxLayout="column" class="form-group">
+                        <label id="radio-group-label" class="form-sub-title">Standard Fees</label>
+                        <div fxLayout="column" class="standard-fee-container">
+
+                            <!--------Cost of part field -->
+                            <mat-form-field>
+                                <mat-label for="txtCostOfParts">Cost of parts:</mat-label>
+                                <input matInput formControlName="partCost" id="txtCostOfParts" name="txtCostOfParts">
+                            </mat-form-field>
+
+                            <!--------Hour of parts field -->
+                            <mat-form-field>
+                                <mat-label for="txtlaborHours">Hours of Labor:</mat-label>
+                                <input matInput formControlName="laborHours" id="txtlaborHours" name="txtlaborHours">
+                            </mat-form-field>
+                        </div>
+
+                        <!--------Submit button section -->
+                        <div fxLayout="row">
+
+                            <mat-card-actions fxFlex fxLayout="row" fxLayoutAlign="center">
+                                <button type="submit" class="submit-button" fxFlex mat-raised-button color="accent"
+                                    [disabled]="serviceForm.invalid || !isCheckBoxChecked">Submit</button>
+                            </mat-card-actions>
+                      
+
+                        </div>
+                         <!---Display error messages if input are invalid-->
+                        <div class="msg-error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+                        <div *ngIf="form.partCost.errors && form.partCost.touched">
+                            <div class="msg-error">* Cost of Parts: Please enter a valid number.</div>
+                        </div>
+                        <div *ngIf=" form.laborHours.errors && form.laborHours.touched">
+                            <div class="msg-error">* Hours of Labor: Please enter a valid number.</div>
+                        </div>
+                        <div *ngIf="!form.services.errors && form.services.touched && !isCheckBoxChecked">
+                            <div class="msg-error">* Selected Services: Please select one or more services.</div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+
+</div>
